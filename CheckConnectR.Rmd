@@ -1,0 +1,39 @@
+---
+title: "CheckConnectR"
+author: "Hokafu"
+date: "2025-03-12"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(data.table)
+```
+
+
+## R Environment
+```{r renvironment}
+Sys.getenv()
+sessionInfo()
+package_list <- as.data.frame(installed.packages())[,c("Package","Version")]
+rownames(package_list) <- NULL
+package_list
+cat(system("ls -la ${R_SESSION_TMPDIR}", intern = TRUE), sep = "\n")
+options("repos")
+```
+
+## Sandbox Environment
+```{r  packages}
+cat(system("ls -la /opt/rstudio-connect/mnt/app", intern = TRUE), sep = "\n")
+cat(system("df /opt/rstudio-connect/mnt/app", intern = TRUE), sep = "\n")
+cat(system("df .", intern = TRUE), sep = "\n")
+cat(system("pwd", intern = TRUE), sep = "\n")
+if (FALSE) {
+system2("dd", args = c("if=/dev/zero", "of=testfile.bin", "bs=2G", "count=1", "oflag=dsync"))
+file.exists("/opt/rstudio-connect/mnt/app/testfile.bin")
+file.remove("/opt/rstudio-connect/mnt/app/testfile.bin")
+system2("dd", args = c("if=/dev/zero", "of=testfile.bin", "bs=1M", "count=2000", "oflag=dsync"))
+file.exists("/opt/rstudio-connect/mnt/app/testfile.bin")
+file.remove("/opt/rstudio-connect/mnt/app/testfile.bin")
+}
+```
