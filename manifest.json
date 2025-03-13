@@ -763,10 +763,13 @@
   },
   "files": {
     "CheckConnectR.Rmd": {
-      "checksum": "eef70a735877e281adb49bcfe4b8ad88"
+      "checksum": "3ccd3947f703da1a45bc755684bb2fa4"
     },
     "requirements.txt": {
       "checksum": "826d0871ef6baa5f20d0022f75477054"
+    },
+    "SystemInfo.Rmd": {
+      "checksum": "6d1b22540fec54123a12bfc3fb6763ee"
     }
   },
   "users": null
