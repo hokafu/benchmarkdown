@@ -1,0 +1,22 @@
+---
+title: "System Information"
+author: "Hokafu"
+date: "2025-03-13"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## OS/System Information
+
+```{r systeminfo}
+cat(system("whoami", intern = TRUE), sep = "\n")
+Sys.time()
+Sys.Date()
+Sys.info()
+cat(system("findmnt", intern = TRUE), sep = "\n")
+cat(system("df -ha", intern = TRUE), sep = "\n")
+cat(system("top -b -n1", intern = TRUE), sep = "\n")
+```
